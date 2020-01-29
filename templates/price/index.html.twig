@@ -11,6 +11,7 @@
             <tr>
                 <th>Adulte</th>
                 <th>Enfant</th>
+                <th>Groupe</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -19,6 +20,7 @@
             <tr>
                 <td>{{ price.adult }}</td>
                 <td>{{ price.child }}</td>
+                <td>{{ price.crowd }}</td>
                 <td>
                     <a href="{{ path('admin_price_show', {'id': price.id}) }}" class="btn btn-outline-primary">Aperçu</a>
                     <a href="{{ path('admin_price_edit', {'id': price.id}) }}" class="btn btn-outline-primary">Modifier</a>

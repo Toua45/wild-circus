@@ -5,6 +5,9 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\RepresentationRepository")
@@ -37,6 +40,7 @@ class Representation
      * @ORM\Column(type="string", length=255)
      */
     private $adress;
+
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Category", mappedBy="representation")

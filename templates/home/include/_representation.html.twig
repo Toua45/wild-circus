@@ -1,0 +1,81 @@
+<h1 class="ml-3 mr-3 mb-5 pt-4 pb-5 m-md-5 show-title text-center">Nos prochaines représentations</h1>
+<div class="container">
+    <div class="row justify-content-between">
+        {% for representation in representations %}
+            {% if loop.first %}
+                {#                                <h2 class="col offset-1 oneArticle">Le prochain spectacle</h2>#}
+                {#                                <div class="card mb-5">#}
+                {#                                    <div class="row no-gutters">#}
+                {#                                        <div class="col-md-6 col-10">#}
+                {#                                            <img src="https://i.postimg.cc/yYCyG3Ty/becky-phan-o8-670-KHg-K8-unsplash.jpg"#}
+                {#                                                 class="card-img"#}
+                {#                                                 alt="representation-picture">#}
+                {#                                        </div>#}
+                {#                                        <div class="col-md-6 col-10">#}
+                {#                                            <div class="card-body">#}
+                {#                                                <h5 class="card-title">{{ representation.title }}</h5>#}
+                {#                                                <p class="card-text">{{ representation.content }}</p>#}
+                {#                                                <p class="card-text"><small#}
+                {#                                                            class="text-muted">{{ representation.date|date('Y-m-d H:i:s') }}</small><small#}
+                {#                                                            class="text-muted">#}
+                {#                                                        {{ representation.adress }}</small>#}
+                {#                                                </p>#}
+                {#                                            </div>#}
+                {#                                        </div>#}
+
+                {#                                    </div>#}
+                {#                                </div>#}
+
+                <div class="col-12">
+                    <h2 class="text-left">Le prochain spectacle</h2>
+                    <div class="row">
+                        <div class="col-md-6 card-img-block">
+                            <div class="card-img-block-top">
+                                <img src="https://i.postimg.cc/yYCyG3Ty/becky-phan-o8-670-KHg-K8-unsplash.jpg"
+                                     class="card-img-top"
+                                     alt="representation-picture">
+                            </div>
+                        </div>
+                        <div class="col-md-6 card profile-card firstblog">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ representation.title }}</h5>
+                                <p class="card-text text-justify">{{ representation.content }}</p>
+
+                            </div>
+                            <p class="card-text"><small
+                                        class="text-muted mx-3">Date de représentation
+                                    : {{ representation.date|date('Y-m-d H:i:s') }}</small></p>
+                            <p class="card-text"><small
+                                        class="text-muted mx-3">
+                                    Lieu de représenation : {{ representation.adress }}</small>
+                            </p>
+                        </div>
+                        <h3 class="mt-5 mb-5">Nos dernières performances</h3>
+                    </div>
+                </div>
+
+            {% else %}
+                <div class="col-md-4 col-lg-5 mb-5">
+                    <div class="card-img-block">
+                        <img src="https://i.postimg.cc/yYCyG3Ty/becky-phan-o8-670-KHg-K8-unsplash.jpg"
+                             class="card-img"
+                             alt="representation-picture">
+                    </div>
+                    <div class="card profile-card card-block">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ representation.title }}</h5>
+                            <p class="card-text text-justify">{{ representation.content }}</p>
+                        </div>
+                        <p class="card-text mx-3"><small
+                                    class="text-muted">Date de représentation
+                                : {{ representation.date|date('Y-m-d H:i:s') }}</small></p>
+                        <p class="card-text mx-3"><small
+                                    class="text-muted">
+                                Lieu de représenation : {{ representation.adress }}</small>
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

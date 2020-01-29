@@ -13,6 +13,11 @@ const $ = require('jquery');
 // the bootstrap module doesn't export/return anything
 require('bootstrap');
 
+// eslint-disable-next-line import/no-extraneous-dependencies
+require('@fortawesome/fontawesome-free/css/all.min.css');
+// eslint-disable-next-line import/no-extraneous-dependencies
+require('@fortawesome/fontawesome-free/js/all.js');
+
 // or you can include specific pieces
 // require('bootstrap/js/dist/tooltip');
 // require('bootstrap/js/dist/popover');
