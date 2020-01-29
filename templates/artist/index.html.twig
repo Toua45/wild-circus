@@ -1,0 +1,38 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block title %}Menu des artistes{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Liste des artistes</h1>
+    <a href="{{ path('admin_artist_new') }}"class="btn btn-outline-primary mb-5">Créer</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for artist in artists %}
+            <tr>
+                <td>{{ artist.lastname }}</td>
+                <td>{{ artist.firstname }}</td>
+                <td>{{ artist.birthday ? artist.birthday|date('Y-m-d') : '' }}</td>
+                <td>{{ artist.role }}</td>
+                <td>
+                    <a href="{{ path('admin_artist_show', {'id': artist.id}) }}" class="btn btn-outline-primary">Aperçu</a>
+                    <a href="{{ path('admin_artist_edit', {'id': artist.id}) }}" class="btn btn-outline-primary">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

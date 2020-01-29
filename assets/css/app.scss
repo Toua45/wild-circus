@@ -1,0 +1,10 @@
+@import "~bootstrap/scss/bootstrap";
+@import "_vars";
+@import "style_navbar";
+@import "style_navbar_admin";
+@import "style_show";
+@import "style_map";
+
+body {
+    background-color: $primary-color;
+}
