@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Form;
+
+use App\Entity\Artist;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+
+class ArtistType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('lastname', TextType::class, [
+                'label' => 'Nom'])
+            ->add('firstname', TextType::class, [
+                'label' => 'Prénom'])
+            ->add('birthday', BirthdayType::class, [
+                'label' => 'Date'])
+            ->add('role', TextType::class, [
+                'label' => 'Rôle'])
+            ->add('representation', null, [
+                'label' => 'Représentation',
+                'choice_label' => 'title'])
+        ;
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'data_class' => Artist::class,
+        ]);
+    }
+}

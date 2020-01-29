@@ -1,0 +1,39 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block title %}Menu des représentations{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Liste des représentations</h1>
+    <a href="{{ path('admin_representation_new') }}" class="btn btn-outline-primary mb-5">Créer</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>Date</th>
+                <th>Lieu</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for representation in representations %}
+            <tr>
+                <td>{{ representation.title }}</td>
+                <td>{{ representation.content }}</td>
+                <td>{{ representation.date ? representation.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ representation.adress }}</td>
+                <td>
+                    <a href="{{ path('admin_representation_show', {'id': representation.id}) }}" class="btn btn-outline-primary mb-2">Aperçu</a>
+                    <a href="{{ path('admin_representation_edit', {'id': representation.id}) }}" class="btn btn-outline-primary">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block title %}Menu des tarifs{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center mt-5 mb-5">Liste des tarifs</h1>
+    <a href="{{ path('admin_price_new') }}" class="btn btn-outline-primary mb-5">Créer</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Adulte</th>
+                <th>Enfant</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for price in prices %}
+            <tr>
+                <td>{{ price.adult }}</td>
+                <td>{{ price.child }}</td>
+                <td>
+                    <a href="{{ path('admin_price_show', {'id': price.id}) }}" class="btn btn-outline-primary">Aperçu</a>
+                    <a href="{{ path('admin_price_edit', {'id': price.id}) }}" class="btn btn-outline-primary">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
