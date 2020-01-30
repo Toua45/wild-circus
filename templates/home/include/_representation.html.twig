@@ -1,67 +1,70 @@
-<h1 class="ml-3 mr-3 mb-5 pt-4 pb-5 m-md-5 show-title text-center" id="representation">Nos prochaines
+<h1 class="ml-3 mr-3 mb-5 pt-4 pb-5 m-md-5 show-title text-center" id="representation">Nos
     représentations</h1>
-<div class="container">
-    <div class="row justify-content-between">
-        {% for representation in representations %}
-            {% if loop.first %}
-                <div class="col-12">
-                    <h2 class="text-left">Le prochain spectacle</h2>
-                    <div class="row">
-                        <div class="col-md-6 card-img-block">
-                            <div class="card-img-block-top">
-                                <img src="https://i.postimg.cc/yYCyG3Ty/becky-phan-o8-670-KHg-K8-unsplash.jpg"
-                                     class="card-img-top"
-                                     alt="representation-picture">
+<section class="section-representation pt-5">
+    <div class="container">
+        <div class="row justify-content-between">
+            {% for representation in representations %}
+                {% if loop.first %}
+                    <div class="col-12">
+                        <h2 class="text-left representation-title">Le prochain spectacle</h2>
+                        <div class="row">
+                            <div class="col-md-6 card-img-block">
+                                <div class="card-img-block-top">
+                                    <img src="https://i.postimg.cc/yYCyG3Ty/becky-phan-o8-670-KHg-K8-unsplash.jpg"
+                                         class="card-img-top"
+                                         alt="representation-picture">
+                                </div>
                             </div>
+                            <div class="col-md-6 card profile-card firstblog">
+                                <div class="card-body">
+                                    <h3 class="card-title">{{ representation.title }}</h3>
+                                    <p class="card-text text-justify">{{ representation.content }}</p>
+                                    {#                                <p>Les artistes que vous pouvez trouver lors de cet évènement sont : </p>#}
+                                    {#                                {% for artist in representation.artists %}#}
+                                    {#                                    <p>{{ artist.firstname }} {{ artist.lastname }} <small#}
+                                    {#                                                class="text-muted mx-2">#}
+                                    {#                                            {{ artist.role }}</small></p>#}
+                                    {#                                {% endfor %}#}
+                                    <p class="card-text"><small
+                                                class="text-muted mx-2">Date de représentation
+                                            : {{ representation.date|date('d/m/Y H:i:s') }}</small>
+                                    <p class="card-text"><small
+                                                class="text-muted mx-2">
+                                            Lieu de représenation : {{ representation.adress }}</small>
+                                    </p>
+                                </div>
+                                <div class="reserve-section d-flex justify-content-center">
+                                    <a href="{{ path('reservation') }}"
+                                       class="btn btn-outline-primary reserve-btn w-15 mb-5">Réserver</a>
+                                </div>
+                            </div>
+                            <h2 class="mt-5 mb-5 representation-title">Nos dernières performances</h2>
                         </div>
-                        <div class="col-md-6 card profile-card firstblog">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ representation.title }}</h5>
-                                <p class="card-text text-justify">{{ representation.content }}</p>
-{#                                <p>Les artistes que vous pouvez trouver lors de cet évènement sont : </p>#}
-{#                                {% for artist in representation.artists %}#}
-{#                                    <p>{{ artist.firstname }} {{ artist.lastname }} <small#}
-{#                                                class="text-muted mx-2">#}
-{#                                            {{ artist.role }}</small></p>#}
-{#                                {% endfor %}#}
-                                <p class="card-text"><small
-                                            class="text-muted mx-2">Date de représentation
-                                        : {{ representation.date|date('d/m/Y H:i:s') }}</small>
-                                <p class="card-text"><small
-                                            class="text-muted mx-2">
-                                        Lieu de représenation : {{ representation.adress }}</small>
-                                </p>
-                            </div>
-                            <div class="reserve-section d-flex justify-content-center">
-                                <a href="{{ path('reservation') }}" class="btn btn-outline-primary reserve-btn w-15 mb-2">Réserver</a>
-                            </div>
-                        </div>
-                        <h3 class="mt-5 mb-5">Nos dernières performances</h3>
                     </div>
-                </div>
 
-            {% else %}
-                <div class="col-md-4 col-lg-5 mb-5">
-                    <div class="card-img-block">
-                        <img src="https://i.postimg.cc/yYCyG3Ty/becky-phan-o8-670-KHg-K8-unsplash.jpg"
-                             class="card-img"
-                             alt="representation-picture">
-                    </div>
-                    <div class="card profile-card card-block">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ representation.title }}</h5>
-                            <p class="card-text text-justify">{{ representation.content }}</p>
+                {% else %}
+                    <div class="col-md-4 col-lg-5 mb-5">
+                        <div class="card-img-block">
+                            <img src="https://i.postimg.cc/yYCyG3Ty/becky-phan-o8-670-KHg-K8-unsplash.jpg"
+                                 class="card-img"
+                                 alt="representation-picture">
                         </div>
-                        <p class="card-text mx-3"><small
-                                    class="text-muted">Date de représentation
-                                : {{ representation.date|date('d/m/Y H:i:s') }}</small></p>
-                        <p class="card-text mx-3"><small
-                                    class="text-muted">
-                                Lieu de représenation : {{ representation.adress }}</small>
-                        </p>
+                        <div class="card profile-card card-block">
+                            <div class="card-body">
+                                <h3 class="card-title">{{ representation.title }}</h3>
+                                <p class="card-text text-justify">{{ representation.content }}</p>
+                            </div>
+                            <p class="card-text mx-3"><small
+                                        class="text-muted">Date de représentation
+                                    : {{ representation.date|date('d/m/Y H:i:s') }}</small></p>
+                            <p class="card-text mx-3"><small
+                                        class="text-muted">
+                                    Lieu de représenation : {{ representation.adress }}</small>
+                            </p>
+                        </div>
                     </div>
-                </div>
-            {% endif %}
-        {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
-</div>
+</section>

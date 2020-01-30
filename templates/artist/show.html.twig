@@ -18,7 +18,7 @@
             </tr>
             <tr>
                 <th>Photo</th>
-                <td><img src="{% if artist.picture is null %}
+                <td><img src="{% if artist.imageName is empty %}
                 {{ asset('build/placeholder_profil_grey.png') }}
                   {% else %}
                 {{ vich_uploader_asset(artist, 'imageFile') }}

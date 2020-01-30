@@ -38,6 +38,7 @@ class AdminArtistController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($artist);
             $entityManager->flush();
+            $this->addFlash('success', "L' artiste a été crée");
 
             return $this->redirectToRoute('admin_artist_index');
         }
@@ -68,6 +69,7 @@ class AdminArtistController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('warning', "L' artiste a été modifié");
 
             return $this->redirectToRoute('admin_artist_index');
         }
@@ -87,6 +89,7 @@ class AdminArtistController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($artist);
             $entityManager->flush();
+            $this->addFlash('danger', "L' artiste a été supprimé");
         }
 
         return $this->redirectToRoute('admin_artist_index');

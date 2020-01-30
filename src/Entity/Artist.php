@@ -51,12 +51,12 @@ class Artist
      *     mimeTypesMessage = "Ce n'est pas un format d'image valide"
      * )
      *
-     * @var File
+     * @var File|null
      */
     private $imageFile;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      *
      * @var string
      */

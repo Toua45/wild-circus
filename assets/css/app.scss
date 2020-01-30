@@ -2,6 +2,7 @@
 @import "_vars";
 @import "style_navbar";
 @import "style_navbar_admin";
+@import "style_home";
 @import "style_representation";
 @import "style_team";
 
@@ -14,8 +15,22 @@ body {
     min-height: 100%;
     margin: 0;
     padding: 0;
+    //background: url('../images/wave_form.png') no-repeat center center fixed;
+}
+
+h1 {
+    font-family: $font-title;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: $font-title;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
 a {
     color: $link-color;
+    font-size: 1.3rem;
 }

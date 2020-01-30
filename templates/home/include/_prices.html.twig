@@ -1,9 +1,10 @@
 <h1 class="ml-3 mr-3 mb-5 pt-4 pb-5 m-md-5 show-title text-center" id="prices">Nos tarifs</h1>
-<div class="container">
+<section class="section-prices pt-5">
+    <div class="container">
         <div class="row justify-content-around">
 
             <div class="card mb-5" style="width: 18rem;">
-                <img src="{{ asset('build/placeholder_profil_grey.png') }}" class="card-img-top w-100" alt="prices-picture_1">
+                <img src="{{ asset('build/profile2.jpg') }}" class="card-img-price w-100" alt="prices-picture_1">
                 <div class="card-body">
                     <p class="card-text text-center">Tarif Adultes</p>
                     <p class="card-text text-center">{{ prices.adult }} €</p>
@@ -11,7 +12,7 @@
             </div>
 
             <div class="card mb-5" style="width: 18rem;">
-                <img src="{{ asset('build/placeholder_profil_grey.png') }}" class="card-img-top w-100" alt="prices-picture_2">
+                <img src="{{ asset('build/childrens.jpg') }}" class="card-img-price w-100" alt="prices-picture_2">
                 <div class="card-body">
                     <p class="card-text text-center">Tarif Enfants</p>
                     <p class="card-text text-center">{{ prices.child }} €</p>
@@ -19,7 +20,7 @@
             </div>
 
             <div class="card mb-5" style="width: 18rem;">
-                <img src="{{ asset('build/placeholder_profil_grey.png') }}" class="card-img-top w-100" alt="prices-picture_2">
+                <img src="{{ asset('build/group.jpg') }}" class="card-img-price w-100" alt="prices-picture_2">
                 <div class="card-body">
                     <p class="card-text text-center">Tarif de Groupes par personnes (Groupe de plus de 10 personnes)</p>
                     <p class="card-text text-center">{{ prices.crowd }} €</p>
@@ -27,4 +28,5 @@
             </div>
 
         </div>
-</div>
+    </div>
+</section>
