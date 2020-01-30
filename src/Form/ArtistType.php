@@ -28,6 +28,9 @@ class ArtistType extends AbstractType
                 'label' => 'Date'])
             ->add('role', TextType::class, [
                 'label' => 'Rôle'])
+            ->add('category', null, [
+                'label' => 'Univers',
+                'choice_label' => 'name'])
             ->add('representation', null, [
                 'label' => 'Représentation',
                 'choice_label' => 'title'])

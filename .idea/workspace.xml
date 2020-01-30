@@ -3,24 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="053ee317-8f07-4c1f-ae94-55adae51f661" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/_vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/_vars.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/style_home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style_home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style_team.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style_team.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/acrobat.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminArtistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminArtistController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminPriceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminPriceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminRepresentationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminRepresentationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/TeamController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TeamController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/ArtistFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/ArtistFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/CategoryFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/CategoryFixtures.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Artist.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Artist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/artist/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/artist/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/include/_prices.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/include/_prices.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/include/_representation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/include/_representation.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/include/_footer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/include/_footer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/include/_navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/include/_navbar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout_admin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout_admin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reservation/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reservation/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reservation/mail.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reservation/mail.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ArtistType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArtistType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ArtistRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ArtistRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/team/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/team/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -184,21 +174,21 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Form" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Form" />
       <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/assets/fonts" />
       <recent name="$PROJECT_DIR$/templates/reservation" />
-      <recent name="$PROJECT_DIR$/src/Form" />
       <recent name="$PROJECT_DIR$/templates/home" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -225,7 +215,7 @@
       <updated>1580292025101</updated>
       <workItem from="1580292026274" duration="50776000" />
       <workItem from="1580370990500" duration="21171000" />
-      <workItem from="1580394241246" duration="558000" />
+      <workItem from="1580394241246" duration="4591000" />
     </task>
     <servers />
   </component>

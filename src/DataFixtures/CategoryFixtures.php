@@ -17,6 +17,7 @@ class CategoryFixtures extends Fixture implements DependentFixtureInterface
         for ($i = 0; $i <= 5; $i++) {
             $category = new Category();
             $category->setName($faker->word);
+            $this->addReference('category_' .$i, $category);
             $category->setRepresentation($this->getReference('representation_'. rand(0,2)));
             $manager->persist($category);
         }

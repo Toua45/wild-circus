@@ -23,6 +23,7 @@ class ArtistFixtures extends Fixture implements DependentFixtureInterface
             $artist->setUpdatedAt(new \DateTime());
             $artist->setImageName('');
             $artist->setRepresentation($this->getReference('representation_'. rand(0,2)));
+            $artist->setCategory($this->getReference('category_'. rand(0,4)));
             $manager->persist($artist);
         }
 
@@ -38,7 +39,8 @@ class ArtistFixtures extends Fixture implements DependentFixtureInterface
     public function getDependencies()
     {
         return [
-            RepresentationFixtures::class
+            RepresentationFixtures::class,
+            CategoryFixtures::class,
         ];
     }
 }
