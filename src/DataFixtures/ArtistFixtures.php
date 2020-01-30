@@ -14,7 +14,7 @@ class ArtistFixtures extends Fixture implements DependentFixtureInterface
     {
         $faker = Faker\Factory::create();
 
-        for ($i = 0; $i < 10; $i++ ) {
+        for ($i = 0; $i < 9; $i++ ) {
             $artist = new Artist();
             $artist->setLastname($faker->lastName);
             $artist->setFirstname($faker->firstName);

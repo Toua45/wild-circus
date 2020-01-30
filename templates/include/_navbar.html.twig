@@ -1,24 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand mr-5" href="/home"><img src="{{ asset('build/wild-circus-logo.jpg') }}" alt="logo"
-                                                   height="80"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
-            aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse " id="navbarSupportedContent-555">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link mr-5" href="/home#representation"><span class="nav-effect">SPECTACLES</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link mr-5" href="{{ path('team') }}"><span class="nav-effect">L'EQUIPE</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link mr-5" href="/home#prices"><span class="nav-effect">TARIFS</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link mr-5" href="{{ path('reservation') }}"><span class="nav-effect">RESERVER</span></a>
-            </li>
-        </ul>
+<div class="d-flex justify-content-center pt-5 pb-5">
+    <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('build/wild-circus-logo.png') }}"
+                                                                alt="logo"
+                                                                height="100"></a>
+</div>
+
+<div class="container circus-navbar pb-5">
+    <div class="row justify-content-center">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent-555"
+                    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent-555">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link links-nav mr-5" href="{{ path('home') }}#representation"><span
+                                    class="nav-effect">SPECTACLES</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link links-nav mr-5" href="{{ path('team') }}"><span
+                                    class="nav-effect">L'EQUIPE</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link links-nav mr-5" href="{{ path('home') }}#prices"><span class="nav-effect">TARIFS</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link links-nav mr-5" href="{{ path('reservation') }}"><span
+                                    class="nav-effect">RESERVER</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     </div>
-</nav>
+</div>

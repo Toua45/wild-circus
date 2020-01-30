@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Representation;
 use App\Repository\PriceRepository;
 use App\Repository\RepresentationRepository;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/home", name="home")
+     * @Route("/", name="home")
      */
     public function index(RepresentationRepository $representationRepository, PriceRepository $priceRepository) : Response
     {
@@ -22,5 +23,4 @@ class HomeController extends AbstractController
             'prices' => $prices,
         ]);
     }
-
 }

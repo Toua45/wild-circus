@@ -22,3 +22,13 @@
 .picture_admin {
     display: contents;
 }
+
+.admin-link {
+    color: $third-color;
+    font-weight: bold;
+}
+
+.admin-link:hover {
+    color: $third-color;
+    font-weight: bold;
+}

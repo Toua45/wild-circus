@@ -5,23 +5,15 @@
 @import "style_home";
 @import "style_representation";
 @import "style_team";
-
-html {
-    height: 100%;
-}
-
-body {
-    background-color: $primary-color;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    //background: url('../images/wave_form.png') no-repeat center center fixed;
-}
+@import "style_reservation";
+@import "style_footer";
+@import "style_admin";
 
 h1 {
     font-family: $font-title;
     font-size: 2rem;
     font-weight: bold;
+    color: $primary-color;
 }
 
 h2 {
@@ -30,7 +22,21 @@ h2 {
     font-weight: bold;
 }
 
+h5 {
+    color: $primary-color;
+    font-weight: bold;
+}
+
 a {
-    color: $link-color;
+    color: $primary-color;
     font-size: 1.3rem;
+    font-weight: bold;
+}
+
+a:hover {
+    color: $primary-color;
+}
+
+p {
+    font-weight: bold;
 }

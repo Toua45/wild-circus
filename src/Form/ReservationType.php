@@ -24,6 +24,9 @@ class ReservationType extends AbstractType
             ])
             ->add('message',TextareaType::class,[
                 'label' => 'Message',
+                'attr' => [
+                    'rows' => 7,
+                ]
             ])
 
         ;

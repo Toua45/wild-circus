@@ -1,21 +1,31 @@
+.carousel-circus {
+  height: 25%;
+}
+
+.circus-title {
+  font-size: 3rem;
+  color: $primary-color;
+}
+
+.circus-accroche {
+  color: $primary-color;
+}
+
+.web-page {
+  background: url('../images/web-page.png') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.8;
+}
+
 .card-img-price {
+  //object-fit: cover;
   height: 30vh;
 }
 
 /****Section Sectacles****/
-
-//.section-representation {
-//  background: url('../images/circus-show2.jpg') no-repeat center center fixed;
-//  background-size: cover;
-//  opacity: 0.9;
-//}
 
 .representation-title {
   color: $primary-color;
 }
 
 /****Section Tarifs****/
-
-//.section-prices {
-//  background-color: $fourth-color;
-//}

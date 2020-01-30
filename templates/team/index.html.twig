@@ -1,27 +1,26 @@
 {% extends 'layout.html.twig' %}
-{% form_theme form 'bootstrap_4_horizontal_layout.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 
 {% block title %}L'équipe{% endblock %}
 
 {% block body %}
     <h1 class="ml-3 mr-3 mb-3 pt-4 pb-3 m-md-5 show-title text-center" id="representation">Nos artistes</h1>
 
-    <div class="container">
+    <div class="container search-section pt-5 pb-5">
         <div class="row">
             <div class="col-12">
                 {{ form_start(form) }}
                 {{ form_widget(form) }}
                 <div class="d-flex justify-content-center">
-                <button class="btn btn-outline-primary">Rechercher</button>
+                <button class="btn btn-outline-danger">Rechercher</button>
                 </div>
                 {{ form_end(form) }}
             </div>
         </div>
     </div>
-    <hr/>
 
     <div class="container mb-5">
-        <div class="row">
+        <div class="row justify-content-center">
             {% for artist in artists %}
 
                 <div class="col-sm-3 m-4">
