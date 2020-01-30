@@ -22,4 +22,5 @@ class HomeController extends AbstractController
             'prices' => $prices,
         ]);
     }
+
 }

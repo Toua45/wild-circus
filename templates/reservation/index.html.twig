@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+{% form_theme form 'bootstrap_4_horizontal_layout.html.twig' %}
+{% block title %}Hello ReservationController!{% endblock %}
+
+{% block body %}
+    <div class="container mt-5 mb-5">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <div class="d-flex justify-content-center">
+            <button class="btn-outline-primary" type="submit">Envoyer</button>
+        </div
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
