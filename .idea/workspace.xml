@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="053ee317-8f07-4c1f-ae94-55adae51f661" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style_home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style_home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/include/_carousel.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/include/_carousel.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/include/_prices.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/include/_prices.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style_representation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style_representation.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/include/_representation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/include/_representation.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -210,7 +209,7 @@
       <updated>1580292025101</updated>
       <workItem from="1580292026274" duration="50776000" />
       <workItem from="1580370990500" duration="21171000" />
-      <workItem from="1580394241246" duration="22054000" />
+      <workItem from="1580394241246" duration="25311000" />
     </task>
     <servers />
   </component>

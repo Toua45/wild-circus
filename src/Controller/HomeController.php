@@ -23,4 +23,14 @@ class HomeController extends AbstractController
             'prices' => $prices,
         ]);
     }
+
+    /**
+     * @Route("/home/show-event/{id}", name="home_show")
+     */
+    public function show(Representation $representation)
+    {
+        return $this->render('home/show.html.twig', [
+            'representation' => $representation
+        ]);
+    }
 }
