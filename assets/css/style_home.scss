@@ -17,11 +17,6 @@
   opacity: 0.8;
 }
 
-.card-img-price {
-  //object-fit: cover;
-  height: 30vh;
-}
-
 /****Section Sectacles****/
 
 .representation-title {
@@ -29,3 +24,7 @@
 }
 
 /****Section Tarifs****/
+.card-img-price {
+  object-fit: cover;
+  height: 30vh;
+}
