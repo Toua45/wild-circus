@@ -3,9 +3,17 @@
 @import "style_navbar";
 @import "style_navbar_admin";
 @import "style_representation";
+@import "style_team";
+
+html {
+    height: 100%;
+}
 
 body {
     background-color: $primary-color;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 a {

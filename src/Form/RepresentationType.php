@@ -22,11 +22,7 @@ class RepresentationType extends AbstractType
             ->add('content', TextType::class, [
                 'label' => 'Description'
             ] )
-            ->add('imageFile', VichImageType::class,
-                [
-                    'label' => 'Photo',
-                    'required' => false,
-                ])
+
             ->add('date', DateTimeType::class, [
                 'label' => 'Date',
                 'data' => new DateTime(),

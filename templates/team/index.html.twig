@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}L'équipe{% endblock %}
+
+{% block body %}
+    <h1 class="ml-3 mr-3 mb-3 pt-4 pb-3 m-md-5 show-title text-center" id="representation">Nos artistes</h1>
+
+    {% for artist in artists %}
+        <div class="container">
+            <div class="row no-gutters">
+                <div class="col-sm-3">
+                    <div class="profile-card-team">
+                        <div class="profile-img">
+                            <img src="https://i.postimg.cc/VNs6dtw4/profile2.jpg" alt="Team Image">
+                        </div>
+                        <div class="profile-content">
+                            <h2 class="title">{{ artist.firstname }}
+                                <span>{{ artist.birthday ? artist.birthday|date('Y-m-d') : '' }}</span>
+                                <span>{{ artist.role }}</span>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
