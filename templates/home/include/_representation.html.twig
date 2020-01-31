@@ -1,47 +1,50 @@
 <h1 class="ml-3 mr-3 mb-5 pt-4 pb-5 m-md-5 show-title text-center" id="representation">Nos
     représentations</h1>
 <section class="section-representation">
-    <div class="container">
+    <div class="container border-bottom pb-5">
         <div class="row justify-content-between">
             {% for representation in representations %}
                 {% if loop.first %}
                     <div class="col-12">
                         <h2 class="text-center representation-title mb-5">Le prochain spectacle</h2>
-                        <div class="row">
-                            <div class="col-md-6 card-img-block">
-                                <div class="card-img-block-top">
-                                    <img src="{{ asset('build/event-1.jpg') }}"
-                                         class="card-img-top"
-                                         alt="representation-picture">
+                        <div class="zoom">
+                            <div class="row">
+                                <div class="col-md-6 card-img-block">
+                                    <div class="card-img-block-top">
+                                        <img src="{{ asset('build/event-1.jpg') }}"
+                                             class="card-img-top"
+                                             alt="representation-picture">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 card profile-card firstblog">
-                                <div class="card-body">
-                                    <h3 class="card-title">{{ representation.title }}</h3>
-                                    <p class="card-text text-justify">{{ representation.content }}</p>
-                                    <p class="card-text"><small
-                                                class="text-muted mx-2">Date de représentation
-                                            : {{ representation.date|date('d/m/Y H:i:s') }}</small>
-                                    <p class="card-text"><small
-                                                class="text-muted mx-2">
-                                            Lieu de représenation : {{ representation.adress }}</small>
-                                    </p>
-                                </div>
-                                <div class="reserve-section d-flex justify-content-center">
-                                    <a class="btn btn-outline-danger reserve-btn w-15 mb-5 m-5"
-                                       href="{{ path('home_show', {'id':representation.id}) }}">Détail de
-                                        l'évènement</a>
-                                    <a href="{{ path('reservation') }}"
-                                       class="btn btn-outline-danger reserve-btn align-items-center w-15 mb-5 m-5">Réserver</a>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="d-flex justify-content-center">
-                                    <h2 class="text-center mt-5 mb-5 representation-title">Nos dernières
-                                        performances</h2>
+                                <div class="col-md-6 card profile-card firstblog">
+                                    <div class="card-body">
+                                        <h3 class="card-title">{{ representation.title }}</h3>
+                                        <p class="card-text text-justify">{{ representation.content }}</p>
+                                        <p class="card-text"><small
+                                                    class="text-muted mx-2">Date de représentation
+                                                : {{ representation.date|date('d/m/Y H:i:s') }}</small>
+                                        <p class="card-text"><small
+                                                    class="text-muted mx-2">
+                                                Lieu de représenation : {{ representation.adress }}</small>
+                                        </p>
+                                    </div>
+                                    <div class="reserve-section d-flex justify-content-center">
+                                        <a class="btn btn-outline-danger reserve-btn w-15 mb-5 m-5"
+                                           href="{{ path('home_show', {'id':representation.id}) }}">Détail de
+                                            l'évènement</a>
+                                        <a href="{{ path('reservation') }}"
+                                           class="btn btn-outline-danger reserve-btn align-items-center w-15 mb-5 m-5">Réserver</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12">
+                            <div class="d-flex justify-content-center">
+                                <h2 class="text-center mt-5 mb-5 representation-title">Nos dernières
+                                    performances</h2>
+                            </div>
+                        </div>
+
                     </div>
 
                 {% else %}

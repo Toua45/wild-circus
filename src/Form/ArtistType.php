@@ -25,7 +25,7 @@ class ArtistType extends AbstractType
                     'required' => false,
                 ])
             ->add('birthday', BirthdayType::class, [
-                'label' => 'Date'])
+                'label' => 'Date de naissance'])
             ->add('role', TextType::class, [
                 'label' => 'Rôle'])
             ->add('category', null, [
