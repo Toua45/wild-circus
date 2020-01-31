@@ -3,13 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="053ee317-8f07-4c1f-ae94-55adae51f661" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style_representation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style_representation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/childrens.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/group.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ArtistType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ArtistType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/profile2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Representation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Representation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RepresentationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RepresentationType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/include/_representation.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/include/_representation.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/include/_navbar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/include/_navbar.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/team/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/team/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +210,10 @@
       <updated>1580292025101</updated>
       <workItem from="1580292026274" duration="50776000" />
       <workItem from="1580370990500" duration="21171000" />
-      <workItem from="1580394241246" duration="28273000" />
+      <workItem from="1580394241246" duration="28642000" />
+      <workItem from="1580430207604" duration="10000" />
+      <workItem from="1580453476566" duration="619000" />
+      <workItem from="1580457241369" duration="589000" />
     </task>
     <servers />
   </component>

@@ -2,8 +2,10 @@
 
 namespace App\Form;
 
+use App\Entity\Artist;
 use App\Entity\Representation;
 use DateTime;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -31,6 +33,13 @@ class RepresentationType extends AbstractType
             ->add('adress', TextType::class, [
                 'label' => 'Lieu'
             ] )
+            ->add('artists', EntityType::class, [
+                'class' => Artist::class,
+                'choice_label' => 'firstname',
+                'multiple' => true,
+                'expanded' => true,
+                'by_reference' => false,
+            ])
         ;
     }
 

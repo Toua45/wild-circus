@@ -11,9 +11,13 @@
                             <div class="row">
                                 <div class="col-md-6 card-img-block">
                                     <div class="card-img-block-top">
-                                        <img src="{{ asset('build/event-1.jpg') }}"
-                                             class="card-img-top"
-                                             alt="representation-picture">
+                                        <img src="{% if representation.picture is empty %}
+                    {{ asset('build/event-1.jpg') }}
+                    {% endif %}"
+                                             alt="{{ representation.title }}" class="Team-picture w-100" alt="representation-picture-1">
+{#                                        <img src="{{ asset('build/event-1.jpg') }}"#}
+{#                                             class="card-img-top"#}
+{#                                             alt="representation-picture">#}
                                     </div>
                                 </div>
                                 <div class="col-md-6 card profile-card firstblog">
@@ -50,9 +54,10 @@
                 {% else %}
                     <div class="col-md-4 col-lg-5 mb-5">
                         <div class="card-img-block">
-                            <img src="{{ asset('build/event-3.jpg') }}"
-                                 class="card-img"
-                                 alt="representation-picture">
+                            <img src="{% if representation.picture is empty %}
+                    {{ asset('build/event-1.jpg') }}
+                    {% endif %}"
+                                 alt="{{ representation.title }}" class="Team-picture w-100" alt="representation-picture-1">
                         </div>
                         <div class="card profile-card card-block">
                             <div class="card-body">

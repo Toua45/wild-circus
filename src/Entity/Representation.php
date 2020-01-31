@@ -41,6 +41,11 @@ class Representation
      */
     private $adress;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $picture;
+
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Category", mappedBy="representation")
@@ -169,6 +174,18 @@ class Representation
                 $artist->setRepresentation(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?string $picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }
