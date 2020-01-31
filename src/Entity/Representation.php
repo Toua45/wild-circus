@@ -53,7 +53,7 @@ class Representation
     private $categories;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Artist", mappedBy="representation")
+     * @ORM\OneToMany(targetEntity="App\Entity\Artist", mappedBy="representation", orphanRemoval=true)
      */
     private $artists;
 
