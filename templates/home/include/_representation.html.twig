@@ -62,7 +62,7 @@
                         <div class="card profile-card card-block">
                             <div class="card-body">
                                 <h3 class="card-title">{{ representation.title }}</h3>
-                                <p class="card-text text-justify">{{ representation.content }}</p>
+                                <p class="card-text text-justify">{{ representation.content|slice(1, 200) }}</p>
                             </div>
                             <p class="card-text mx-3"><small
                                         class="text-muted">Date de représentation

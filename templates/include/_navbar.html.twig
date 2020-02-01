@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-center pt-5 pb-5">
     <a class="navbar-brand" href="{{ path('home') }}"><img src="{{ asset('build/wild-circus-logo.png') }}"
-                                                                alt="logo"
-                                                                height="120"></a>
+                                                           alt="logo"
+                                                           height="120"></a>
 </div>
 
 <div class="container circus-navbar pb-5">
@@ -28,6 +28,23 @@
                     <li class="nav-item">
                         <a class="nav-link links-nav mr-5" href="{{ path('reservation') }}"><span
                                     class="nav-effect">RESERVER</span></a>
+                    </li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item">
+                            <a class="nav-link mr-5" href="{{ path('admin_index') }}"><span class="nav-effect">ADMINISTRATION</span></a>
+                        </li>
+                    {% endif %}
+                </ul>
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+                    <li class="nav-item avatar">
+                        {% if app.user %}
+                            <a class="nav-link" href="{{ path('app_logout') }}"><span
+                                        class="nav-effect">DÉCONNEXION</span>
+                            </a>
+                        {% else %}
+                            <a class="nav-link" href="{{ path('app_login') }}"><span class="nav-effect">CONNEXION</span>
+                            </a>
+                        {% endif %}
                     </li>
                 </ul>
             </div>

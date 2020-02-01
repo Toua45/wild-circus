@@ -34,6 +34,7 @@ class RepresentationType extends AbstractType
                 'label' => 'Lieu'
             ] )
             ->add('artists', EntityType::class, [
+                'label' => 'Artistes',
                 'class' => Artist::class,
                 'choice_label' => 'firstname',
                 'multiple' => true,
