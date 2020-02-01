@@ -57,10 +57,16 @@ class Representation
      */
     private $artists;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\RepresentationLike", mappedBy="representation")
+     */
+    private $likes;
+
     public function __construct()
     {
         $this->categories = new ArrayCollection();
         $this->artists = new ArrayCollection();
+        $this->likes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -188,5 +194,50 @@ class Representation
         $this->picture = $picture;
 
         return $this;
+    }
+
+    /**
+     * @return Collection|RepresentationLike[]
+     */
+    public function getLikes(): Collection
+    {
+        return $this->likes;
+    }
+
+    public function addLike(RepresentationLike $like): self
+    {
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
+            $like->setRepresentation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLike(RepresentationLike $like): self
+    {
+        if ($this->likes->contains($like)) {
+            $this->likes->removeElement($like);
+            // set the owning side to null (unless already changed)
+            if ($like->getRepresentation() === $this) {
+                $like->setRepresentation(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Permet de savoir si cette représentation est liké par un utilisateur
+     *
+     * @param \App\Entity\User $user
+     * @return bool
+     */
+    public function isLikedByUser(User $user) : bool {
+        foreach ($this->likes as $like) {
+            if($like->getUser() === $user) return true;
+        }
+
+        return false;
     }
 }
