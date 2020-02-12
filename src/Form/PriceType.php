@@ -19,6 +19,9 @@ class PriceType extends AbstractType
             ->add('child', NumberType::class,[
                 'label' => 'Enfant'
             ])
+            ->add('crowd', NumberType::class,[
+                'label' => 'Groupe'
+            ])
         ;
     }
 

@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Artist;
+use App\Entity\Category;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
@@ -47,4 +48,19 @@ class ArtistRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findLikeName(?string $search = '', ?Category $category = null)
+    {
+        $qb = $this->createQueryBuilder('a')
+        ->andWhere('a.firstname LIKE :firstname')
+            ->setParameter('firstname', '%' . $search . '%');
+        if ($category) {
+            $qb->andWhere('a.category = :category')
+            ->setParameter('category', $category);
+        }
+        $qb->orderBy('a.firstname', 'ASC')
+            ->setMaxResults(5);
+
+        return $qb->getQuery()->getResult();
+    }
 }

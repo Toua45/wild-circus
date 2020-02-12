@@ -38,6 +38,7 @@ class AdminPriceController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($price);
             $entityManager->flush();
+            $this->addFlash('success', "Les tarifs ont été crées");
 
             return $this->redirectToRoute('admin_price_index');
         }
@@ -68,6 +69,7 @@ class AdminPriceController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $this->addFlash('warning', "Les tarifs ont été modifiés");
 
             return $this->redirectToRoute('admin_price_index');
         }
@@ -87,6 +89,7 @@ class AdminPriceController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($price);
             $entityManager->flush();
+            $this->addFlash('danger', "Les tarifs ont été supprimés");
         }
 
         return $this->redirectToRoute('admin_price_index');

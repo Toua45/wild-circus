@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% block title %}Réservation{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-center pt-5 pb-5">
+        <h1 class="reservation-title">Réservation</h1>
+    </div>
+    <div class="container section-reservation mt-5 mb-5 pt-5 pb-5">
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-outline-danger" type="submit">Envoyer</button>
+        </div
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

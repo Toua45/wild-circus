@@ -5,17 +5,17 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}Wild Circus{% endblock %}</title>
-    <link rel="icon" href="{{ asset('build/') }}">
+    <link rel="icon" href="{{ asset('build/wild-circus-logo.ico') }}">
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
-<body>
+<body class="web-page">
 <main>
     {% block layout %} {% endblock %}
 </main>
 {% block javascripts %}
-    {{ encore_entry_link_tags('app') }}
+    {{ encore_entry_script_tags('app') }}
 {% endblock %}
 </body>
 </html>

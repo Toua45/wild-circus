@@ -1,0 +1,119 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Représentation {{ representation.title }}{% endblock %}
+
+{% block body %}
+    <h1 class="ml-3 mr-3 mb-5 pt-4 pb-5 m-md-5 show-title text-center">{{ representation.title }}</h1>
+    <div class="container pt-5 pb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-10 card-img-block">
+                <div class="card-img-block-top">
+                    <img src="{{ asset('build/event-1.jpg') }}"
+                         class="card-img-top-show"
+                         alt="representation-picture">
+                </div>
+            </div>
+            <div class="col-md-10 col-10 card profile-card event-paragraph">
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-end">
+                        <a href="{{ path('representation_like', {'id' : representation.id}) }}"
+                           class="btn btn-link js-like">
+                            {% if app.user and representation.isLikedByUser(app.user) %}
+                                <i class="fas fa-thumbs-up"></i>
+                            {% else %}
+                                <i class="far fa-thumbs-up"></i>
+                            {% endif %}
+                            <span class="js-likes">{{ representation.likes | length }}</span>
+                            <span class="js-label">J'aime</span>
+                        </a>
+                    </div>
+
+
+                    <p class="card-text text-justify">{{ representation.content }}</p>
+                    <p class="card-text"><small
+                                class="text-muted">Date de représentation
+                            : {{ representation.date|date('d/m/Y H:i:s') }}</small>
+                    <p class="card-text"><small
+                                class="text-muted">
+                            Lieu de représenation : {{ representation.adress }}</small>
+                    </p>
+
+                    <p class="text-center pt-3 pb-3">Liste des artistes : </p>
+                    <div class="row">
+                        {% for artist in representation.artists %}
+                            <div class="d-flex justify-content-center">
+                                <div class="col-md-4 col-12">
+                                    <div class="flip-card m-3">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <img src="{% if artist.imageName is empty %}
+                                                    {{ asset('build/acrobat.jpg') }}
+                                                {% else %}
+                                                    {{ vich_uploader_asset(artist, 'imageFile') }}
+                                                {% endif %}"
+                                                     alt="{{ artist.firstname }}" class="Team-picture w-100"
+                                                     alt="Team Image">
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <div class="profile-content">
+                                                        <h2 class="title mt-5">{{ artist.firstname }}</h2>
+                                                        <p>{{ artist.role }}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+
+                <div class="d-flex justify-content-center pt-5 pb-3">
+                    <a href="{{ path('reservation') }}"
+                       class="btn btn-outline-danger reserve-btn align-items-center w-15 mb-5 m-5">Réserver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center pt-5 pb-5">
+        <a class="btn btn-dark" href="{{ path('home') }}#representation">Retour</a>
+    </div>
+{% endblock %}
+
+        {% block javascripts %}
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script>
+                function onClickBtnLike(event) {
+                    event.preventDefault();
+
+                    const url = this.href;
+                    const spanCount = this.querySelector('span.js-likes');
+                    const icone = this.querySelector('i');
+
+
+                    axios.get(url).then(function (response) {
+                        spanCount.textContent = response.data.likes;
+
+                        if (icone.classList.contains('fas')) {
+                            icone.classList.replace('fas', 'far');
+                        } else {
+                            icone.classList.replace('far', 'fas');
+                        }
+                    }).catch(function (error) {
+                        if (error.response.status === 403) {
+                            window.alert("Vous ne pouvez pas liker un spectacle si vous n'êtes pas connecté !")
+                        } else {
+                            window.alert("Une erreur s'est produite, réessayez plus tard")
+                        }
+                    });
+                }
+
+                document.querySelectorAll('a.js-like').forEach(function (link) {
+                    link.addEventListener('click', onClickBtnLike);
+                })
+            </script>
+        {% endblock %}

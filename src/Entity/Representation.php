@@ -5,6 +5,9 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\RepresentationRepository")
@@ -39,19 +42,31 @@ class Representation
     private $adress;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $picture;
+
+
+    /**
      * @ORM\OneToMany(targetEntity="App\Entity\Category", mappedBy="representation")
      */
     private $categories;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Artist", mappedBy="representation")
+     * @ORM\OneToMany(targetEntity="App\Entity\Artist", mappedBy="representation", orphanRemoval=true)
      */
     private $artists;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\RepresentationLike", mappedBy="representation")
+     */
+    private $likes;
 
     public function __construct()
     {
         $this->categories = new ArrayCollection();
         $this->artists = new ArrayCollection();
+        $this->likes = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -167,5 +182,62 @@ class Representation
         }
 
         return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(?string $picture): self
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|RepresentationLike[]
+     */
+    public function getLikes(): Collection
+    {
+        return $this->likes;
+    }
+
+    public function addLike(RepresentationLike $like): self
+    {
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
+            $like->setRepresentation($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLike(RepresentationLike $like): self
+    {
+        if ($this->likes->contains($like)) {
+            $this->likes->removeElement($like);
+            // set the owning side to null (unless already changed)
+            if ($like->getRepresentation() === $this) {
+                $like->setRepresentation(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * Permet de savoir si cette représentation est liké par un utilisateur
+     *
+     * @param \App\Entity\User $user
+     * @return bool
+     */
+    public function isLikedByUser(User $user) : bool {
+        foreach ($this->likes as $like) {
+            if($like->getUser() === $user) return true;
+        }
+
+        return false;
     }
 }

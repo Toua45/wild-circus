@@ -26,6 +26,11 @@ class Price
      */
     private $child;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $crowd;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +56,18 @@ class Price
     public function setChild(int $child): self
     {
         $this->child = $child;
+
+        return $this;
+    }
+
+    public function getCrowd(): ?int
+    {
+        return $this->crowd;
+    }
+
+    public function setCrowd(int $crowd): self
+    {
+        $this->crowd = $crowd;
 
         return $this;
     }

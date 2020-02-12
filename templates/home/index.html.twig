@@ -3,8 +3,42 @@
 {% block title %}Wild Circus{% endblock %}
 
 {% block body %}
-{#    {% include 'home/include/_carousel.html.twig' %}#}
-    {% include 'home/include/_show.html.twig' %}
+    {% include 'home/include/_carousel.html.twig' %}
+    {% include 'home/include/_representation.html.twig' %}
     {% include 'home/include/_prices.html.twig' %}
-{#    {% include 'home/include/_map.html.twig' %}#}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        function onClickBtnLike(event){
+            event.preventDefault();
+
+            const url = this.href;
+            const spanCount = this.querySelector('span.js-likes');
+            const icone = this.querySelector('i');
+
+
+            axios.get(url).then(function(response) {
+                spanCount.textContent = response.data.likes;
+
+                if(icone.classList.contains('fas')) {
+                    icone.classList.replace('fas', 'far');
+                }
+                else {
+                    icone.classList.replace('far', 'fas');
+                }
+            }).catch(function(error){
+                if(error.response.status === 403) {
+                    window.alert("Vous ne pouvez pas liker un spectacle si vous n'êtes pas connecté !")
+                } else {
+                    window.alert("Une erreur s'est produite, réessayez plus tard")
+                }
+            });
+        }
+
+        document.querySelectorAll('a.js-like').forEach(function (link){
+            link.addEventListener('click', onClickBtnLike);
+        })
+    </script>
 {% endblock %}

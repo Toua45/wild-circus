@@ -5,33 +5,36 @@
 {% block body %}
     <div class="container">
         <h1 class="text-center m-5">{{ representation.title }}</h1>
+        <div class="admin-section pt-5 pb-5 px-5">
+            <table class="table">
+                <tbody>
+                <tr>
+                    <th>Title</th>
+                    <td>{{ representation.title }}</td>
+                </tr>
+                <tr>
+                    <th>Content</th>
+                    <td>{{ representation.content }}</td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <td>{{ representation.date ? representation.date|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Adress</th>
+                    <td>{{ representation.adress }}</td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-center">
+                <a href="{{ path('admin_representation_edit', {'id': representation.id}) }}"
+                   class="btn btn-outline-danger">Modifier</a>
+            </div>
+        </div>
+        <div class="d-flex justify-content-around">
+            <a href="{{ path('admin_representation_index') }}" class="btn btn-dark m-5">Liste des représentation</a>
 
-        <table class="table">
-            <tbody>
-            <tr>
-                <th>Title</th>
-                <td>{{ representation.title }}</td>
-            </tr>
-            <tr>
-                <th>Content</th>
-                <td>{{ representation.content }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{{ representation.date ? representation.date|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Adress</th>
-                <td>{{ representation.adress }}</td>
-            </tr>
-            </tbody>
-        </table>
-
-        <a href="{{ path('admin_representation_index') }}" class="btn btn-dark m-5">Liste des représentation</a>
-
-        <a href="{{ path('admin_representation_edit', {'id': representation.id}) }}"
-           class="btn btn-outline-primary">Modifier</a>
-
-        {{ include('representation/_delete_form.html.twig') }}
+            {{ include('representation/_delete_form.html.twig') }}
+        </div>
     </div>
 {% endblock %}

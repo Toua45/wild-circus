@@ -2,9 +2,41 @@
 @import "_vars";
 @import "style_navbar";
 @import "style_navbar_admin";
-@import "style_show";
-@import "style_map";
+@import "style_home";
+@import "style_representation";
+@import "style_team";
+@import "style_reservation";
+@import "style_footer";
+@import "style_admin";
 
-body {
-    background-color: $primary-color;
+h1 {
+    font-family: $font-title;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: $primary-color;
+}
+
+h2 {
+    font-family: $font-title;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+h5 {
+    color: $primary-color;
+    font-weight: bold;
+}
+
+a {
+    color: $primary-color;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+a:hover {
+    color: $primary-color;
+}
+
+p {
+    font-weight: bold;
 }
